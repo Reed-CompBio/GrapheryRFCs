@@ -1,0 +1,14 @@
+site_name: Graphery RFCs
+repo_url: https://github.com/Reed-CompBio/GrapheryRFCs
+edit_uri: RFCs/
+docs_dir: RFCs
+theme:
+  name: material
+  highlightjs: true
+markdown_extensions: 
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.extra
+  - pymdownx.arithmatex
+  - toc
+ 
