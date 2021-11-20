@@ -4,7 +4,7 @@
 
 *   <a href="#3-0">3.0</a>
 *   <a href="#2.0">2.0</a>
-*   <a href="#1-0">1.0 (Depricated)</a>
+*   <a href="#1-0">1.0(Depricated)</a>
 
 ## 3.0 API {#3-0}
 
