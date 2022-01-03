@@ -9,9 +9,41 @@ The `Code` table describes runnable code snippets.
 
 ## Fields
 
-|       Field       |                             Type                             | Description |
-| :---------------: | :----------------------------------------------------------: | :---------: |
-|      `name`       |                      `models.TextField`                      |             |
-|      `code`       |                      `models.TextField`                      |             |
-| `tutorial_anchor` | [`FK(TutorialAnchor)`](/RFCs/backend/database/tutorial_related_tables/tutorial/tutorial_anchor_table.md) |             |
+|       Field       |                             Type                             |                  Description                   |
+| :---------------: | :----------------------------------------------------------: | :--------------------------------------------: |
+|      `name`       |                      `models.TextField`                      | The human readable name for this code snippet  |
+|      `code`       |                      `models.TextField`                      |                The code snippet                |
+| `tutorial_anchor` | [`FK(TutorialAnchor)`](/RFCs/backend/database/tutorial_related_tables/tutorial/tutorial_anchor_table.md) | The tutorial associated with this code snippet |
+
+## Code Snippet Guidelines
+
+This describes behaviors of code acceptable by 3.0 API. For 2.0 API, please consult the older document. 
+
+After the 3.0 API, the graph and network library `networkx` are injected automatically as `nx` and `networkx`, and users can use it directly, so there is no need to import additional graph or library. With that said, following header should be appended to every code, in which `graph` variable is created in the environment, and the upcoming code should only use `graph`. This is because users can apply the tutorial algorithms by coping the whole tutorial code and replacing `graph` with any other `networkx` graph, without changing anything else. 
+
+```python
+# Python Version: <the python version of the executor>
+import networkx as nx 
+graph = nx.g_graph  # type: 
+# the graphery graph is injected into the networkx module as `g_graph`
+```
+
+The header should not appear in the database, but rather added during the runtime request. That is, suppose the algorithm looks like the following
+
+```python
+for node in graph.nodes:
+  print(node)
+```
+
+The requested code should be 
+
+```python
+# Python Version: <the python version of the executor>
+import networkx as nx 
+graph: nx.Graph = nx.g_graph
+# the graphery graph is injected into the networkx module as `g_graph`
+
+for node in graph.nodes:
+  print(node)
+```
 

@@ -11,7 +11,7 @@
 Credit: a lot of internal changes were inspired by [PyTutor](https://github.com/okpy/pytutor/). 
 
 ```typescript
-type python_graph_object_type = "Node" | "Edge";
+type graph_object_type = "Node" | "Edge" | "DataEdge" | "MultiEdge" | "MultiDataEdge";
 
 type python_object_type =
   | "Number"
@@ -28,7 +28,7 @@ type python_object_type =
 type special_object_type = "Init" | "Ref";
 
 type object_type =
-  | python_graph_object_type
+  | graph_object_type
   | python_object_type
   | special_object_type;
 
@@ -49,12 +49,10 @@ interface compositional_object_identity_type {
 
 interface record_type {
   line: number;
-  variables: {
-    [key: string]: compositional_object_identity_type;
-  };
+  variables: Record<object_identity_type, compositional_object_identity_type>;
   accesses?: compositional_object_identity_type[];
   variable_orders?: string[];
-  stdout?: string;
+  stdout?: string[];
 }
 
 type record_array_type = record_type[];
@@ -75,7 +73,7 @@ let an_example: compositional_object_identity_type = {
   python_id: 4411533616,
 };
 
-let two_example: compositional_object_identity_type = {
+let snd_example: compositional_object_identity_type = {
   type: "Number",
   color: "#334766",
   repr: "20",
@@ -87,8 +85,8 @@ let one_more_example: record_type = {
   variables: {
     "main\u200b@test_var": an_example,
   },
-  accesses: [two_example],
-  stdout: "hello world! \n",
+  accesses: [snd_example],
+  stdout: ["hello world!"],
 };
 ```
 
