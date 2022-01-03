@@ -16,17 +16,25 @@ The executor uses a bunch of environment variables to determine the content it s
 |      `IS_LOCAL`      |     `False`     |    Indicator of whether the script is running locally. If this is turned on, the server ignores every security check.    |
 | `RAND_SEED` | `0` | The default random seed used in simulation. `None` or integers can be used. |
 | `FLOAT_PRECISION` | `4` | The number of float precision. Integers can be used. |
-| `TARGET_VERSION` | `None` | The server version of which the executor uses. |
+
+|          Variable           | Default Value |                   Description                    |
+| :-------------------------: | :-----------: | :----------------------------------------------: |
+|  `REQUEST_DATA_CODE_NAME`   |    `code`     |  The name of code field in the request object.   |
+|  `REQUEST_DATA_GRAPH_NAME`  |    `graph`    |  The name of graph field in the request object.  |
+| `REQUEST_DATA_VERSION_NAME` |   `version`   | The name of version field in the request object. |
+| `REQUEST_DATA_OPTIONS_NAME` |   `options`   | The name of options field in the request object. |
 
 ## Custom Variables
 
 Custom variables are variables referenced within executor and are not intended to be modified. 
 
-|        Variable        |        Value        |                         Description                          |
-| :--------------------: | :-----------------: | :----------------------------------------------------------: |
-|      `PROG_NAME`       | `graphery_executor` | The program name used by pip executable and internal server. |
-|    `SERVER_VERSION`    |       `3.0.0`       | The version of this server. The first digit of the server version matches the version of the result JSON API version. |
-| `IDENTIFIER_SEPARATOR` |     `"\u200b@"`     |          The identifier separator used by recorder.          |
+|         Variable          |        Value        |                         Description                          |
+| :-----------------------: | :-----------------: | :----------------------------------------------------------: |
+|        `PROG_NAME`        | `graphery_executor` | The program name used by pip executable and internal server. |
+|     `SERVER_VERSION`      |       `3.0.0`       | The version of this server. The first digit of the server version matches the version of the result JSON API version. |
+|  `IDENTIFIER_SEPARATOR`   |     `"\u200b@"`     |          The identifier separator used by recorder.          |
+|  `GRAPH_INJECTION_NAME`   |       `graph`       | The name the tutorial graph take when injected into the execution environment. |
+| `NX_GRAPH_INJECTION_NAME` |      `g_graph`      | The name the tutorial graph take when injected into the `networkx` module. |
 
 ## Error Code
 
