@@ -14,11 +14,11 @@ The request object looks like the following.
 interface request_object {
     code: string;
     graph: string | object;
+    version: string;
     options?: request_options;
 }
 
 interface request_options {
-    version?: '3' | '2';
     rand_seed?: int;
     float_precision?: int;
 }
@@ -29,7 +29,6 @@ If any of the request options is undefined, we use the default options to make s
 
 ```typescript
 let default_request_options: request_options = {
-    version: '3',
     rand_seed: 0,
     float_precision: 4,
 }
@@ -41,25 +40,28 @@ where the `record_array_type` is defined in
 the [`result JSON API `](/RFCs/backend/database/tutorial_related_tables/execution_result/result_json_api.md).
 
 ```typescript
-type response_code_type = 'succ' | 'error';
+type err_msg_type = {
+    message: string;
+    traceback: string;
+};
 
-type err_msg_type = string[];
+type response_info_type = {
+    result: record_array_type,
+    [key: string]: any
+}
 
 interface response_object_type {
-    code: response_code_type;
-    exec_result: record_array_type | null;
-    err_msg: err_msg_type | null;
+    info: response_info_type | null;
+    errors: err_msg_type | null;
 }
 
 interface successful_response_object_type extends response_object_type {
-    code: 'succ';
-    exec_result: record_array_type;
-    err_msg: null;
+    info: response_info_type
+    errors: null;
 }
 
 interface error_response_object_type extends response_object_type {
-    code: 'error';
-    exec_result: null;
-    err_msg: err_msg_type;
+    info: null;
+    errors: err_msg_type;
 }
 ```
