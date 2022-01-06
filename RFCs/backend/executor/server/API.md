@@ -2,7 +2,7 @@
 
 ## Introduction
 
-There are two sets of API, one for incoming requests and one for responses.
+There are two sets of API, one for server mode and one for local mode. This API is for server mode. For local mode, please check out [here](./local/API.md). 
 
 ## 3.0 API
 
@@ -36,8 +36,7 @@ let default_request_options: request_options = {
 
 ### Response
 
-where the `record_array_type` is defined in
-the [`result JSON API `](/RFCs/backend/database/tutorial_related_tables/execution_result/result_json_api.md).
+where the `record_array_type` is defined in the [`result JSON API `](/RFCs/backend/database/tutorial_related_tables/execution_result/result_json_api.md).
 
 ```typescript
 type err_msg_type = {
