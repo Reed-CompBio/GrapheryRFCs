@@ -1,9 +1,16 @@
 # `TagBase` Table
 
-`TagBase` is an _abstract_ model where all sets of tags must inherit. It inherites `UUIDMixin` and `PublishedMixin` so that the primary key of every tag is a UUID. It also has a `content` field. 
+`TagBase` is an _abstract_ model where all sets of tags must inherit.
 
-|     Field     |        Type        |                Description                |
-| :-----------: | :----------------: | :---------------------------------------: |
-|    `name`     | `models.CharField` | The name of the tag, shown to the public. |
-| `description` | `models.TextField` |       The description of this tag.        |
+## Mixins
+
+*   [`UUIDMixin`](/RFCs/backend/database/mixins.md#UUIDMixin)
+*   [`TimeDateMixin`](/RFCs/backend/database/mixins.md#TimeDateMixin)
+*   [`StatusMixin`](/RFCs/backend/database/mixins.md#StatusMixin)
+
+|     Field     |                   Type                    |                Description                |
+| :-----------: | :---------------------------------------: | :---------------------------------------: |
+|    `name`     |            `models.CharField`             | The name of the tag, shown to the public. |
+| `tag_anchor`  | [`OTO(TagAnchor)`](./tag_anchor_table.md) |       The anchor point of the tag.        |
+| `description` |            `models.TextField`             |       The description of this tag.        |
 
