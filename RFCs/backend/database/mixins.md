@@ -117,10 +117,19 @@ The status list shows all the possible status code `item_status` can have. All t
 |  reviewing  | `REVIEWING` | waiting to be published by user with publishing capability.  |
 |   private   |  `PRIVATE`  | only viewable by internal staff.                             |
 |    trash    |   `TRASH`   | trashed.                                                     |
+|  autosave   | `AUTOSAVE`  | autosaved draft                                              |
+|   closed    |  `CLOSED`   | closed draft                                                 |
 
-## Additional Argument 
+### Additional Argument
 
 | Variable Name     | Type  | Description                                              |
 | ----------------- | ----- | -------------------------------------------------------- |
 | `_default_status` | `str` | The default status used when no status code is supplied. |
 
+## `LangMixin`
+
+The `LangMixin` is intended to indicate what language a database record is written in. 
+
+|    Field    |        Type        |    Description    |
+| :---------: | :----------------: | :---------------: |
+| `lang_code` | `models.CharField` | The language code |
