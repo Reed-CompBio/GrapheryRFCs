@@ -9,10 +9,10 @@ The `Uploads` table contains all the upload file used in the textual tutorial co
 
 ## Fields
 
-|    Fields     |         Type         | Description |
-| :-----------: | :------------------: | :---------: |
-|    `file`     |  `models.FileField`  |             |
-|    `alias`    |  `models.TextField`  |             |
-| `to_tutorial` | `FK(TutorialAnchor)` |             |
-|  `to_graph`   |  `FK(GraphAnchor)`   |             |
+|       Fields       |         Type          |             Description             |
+| :----------------: | :-------------------: | :---------------------------------: |
+|       `file`       |  `models.FileField`   | The file pointer to the actual file |
+|       `name`       |  `models.CharField`   |  The descriptive name of the file.  |
+| `tutorial_anchors` | `MTM(TutorialAnchor)` |                                     |
+|  `graph_anchors`   |  `MTM(GraphAnchor)`   |                                     |
 
