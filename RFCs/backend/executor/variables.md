@@ -24,6 +24,17 @@ The executor uses a bunch of environment variables to determine the content it s
 | `REQUEST_DATA_VERSION_NAME` |   `version`   | The name of version field in the request object. |
 | `REQUEST_DATA_OPTIONS_NAME` |   `options`   | The name of options field in the request object. |
 
+## Docker Environment Variables
+
+|          Variable          |  Default Value   |                         Description                          |
+| :------------------------: | :--------------: | :----------------------------------------------------------: |
+|  `GE_DOCKER_RESTART_COND`  | `unless-stopped` | Indicate which stop policy the docker should implement. [REF](https://docs.docker.com/compose/compose-file/compose-file-v3/#restart_policy) |
+| `GE_DOCKER_RESTART_WINDOW` |       `10`       | The unit is `s`econd. The time docker should wait before deciding if the restart has succeeded or not. [REF](https://docs.docker.com/compose/compose-file/compose-file-v3/#restart_policy) |
+|    `GE_DOCKER_MEM_OUT`     |       `32`       | The unit is `M`egibyte. The maximum amount of memory docker image can take. Exceeding the limit will issue system kill. |
+|    `GE_DOCKER_CPU_OUT`     |      `0.10`      | The unit is `%`. The percentage of CPU the container can use. |
+
+
+
 ## Custom Variables
 
 Custom variables are variables referenced within executor and are not intended to be modified. 
