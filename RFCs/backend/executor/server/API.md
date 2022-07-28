@@ -22,7 +22,7 @@ interface request_object {
 interface request_options {
     rand_seed?: int;
     float_precision?: int;
-    input_list?: int;
+    input_list?: string[];
 }
 
 ```
@@ -55,7 +55,7 @@ type response_info_type = {
 
 interface response_object_type {
     info: response_info_type | null;
-    errors: err_msg_type | null;
+    errors: err_msg_type[] | null;
 }
 
 interface successful_response_object_type extends response_object_type {
@@ -65,6 +65,6 @@ interface successful_response_object_type extends response_object_type {
 
 interface error_response_object_type extends response_object_type {
     info: null;
-    errors: err_msg_type;
+    errors: err_msg_type[];
 }
 ```
