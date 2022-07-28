@@ -7,6 +7,7 @@ The `GraphDescriptionBase` table is similar to [`TutorialTranslationBase`](/RFCs
 * [`UUIDMixin`](/RFCs/backend/database/mixins.md#UUIDMixin)
 * [`TimeDateMixin`](/RFCs/backend/database/mixins.md#TimeDateMixin)
 * [`StatusMixin`](/RFCs/backend/database/mixins.md#StatusMixin)
+* [`VersionMixin`](/RFCs/backend/database/mixins.md#VersionMixin)
 * [`LangMixin`](/RFCs/backend/database/mixins.md#LangMixin)
 
 ## Fields

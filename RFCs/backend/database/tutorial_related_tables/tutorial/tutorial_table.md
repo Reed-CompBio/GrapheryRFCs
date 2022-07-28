@@ -1,4 +1,4 @@
-# `TutorialTranslation` Table
+# `` Table
 
 Every entry in `TutorialTranslationBase` is linked to one anchor and is the one that's actually holding the textual tutorial . The basic structure of the text content contains a title, paragraphs of actual text in markdown version and html version, an abstract of the main text. It also contains metadata like the authors of the text.
 
@@ -7,6 +7,7 @@ Every entry in `TutorialTranslationBase` is linked to one anchor and is the one 
 * [`UUIDMixin`](/RFCs/backend/database/mixins.md#UUIDMixin)
 * [`TimeDateMixin`](/RFCs/backend/database/mixins.md#TimeDateMixin)
 * [`StatusMixin`](/RFCs/backend/database/mixins.md#StatusMixin)
+* [`VersionMixin`](/RFCs/backend/database/mixins.md#VersionMixin)
 * [`LangMixin`](/RFCs/backend/database/mixins.md#LangMixin)
 
 ## Fields

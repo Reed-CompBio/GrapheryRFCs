@@ -108,21 +108,31 @@ class PublishedMixin(models.Model):
 
 The status list shows all the possible status code `item_status` can have. All the codes are all caps.
 
-| Status Name | Status Code | Description                                                  |
-| :---------: | :---------: | ------------------------------------------------------------ |
+| Status Name | Status Code |                         Description                          |
+| :---------: | :---------: | :----------------------------------------------------------: |
 |    draft    |   `DRAFT`   | incomplete and only viewable by anyone with proper user role. |
-|  published  | `PUBLISHED` | complete and viewable by everyone.                           |
+|  published  | `PUBLISHED` |              complete and viewable by everyone.              |
 |  reviewing  | `REVIEWING` | waiting to be published by user with publishing capability.  |
-|   private   |  `PRIVATE`  | only viewable by internal staff.                             |
-|    trash    |   `TRASH`   | trashed.                                                     |
-|  autosave   | `AUTOSAVE`  | autosaved draft                                              |
-|   closed    |  `CLOSED`   | closed draft                                                 |
+|   private   |  `PRIVATE`  |               only viewable by internal staff.               |
+|    trash    |   `TRASH`   |                           trashed.                           |
+|  autosave   | `AUTOSAVE`  |                       autosaved draft                        |
+|   closed    |  `CLOSED`   |                         closed draft                         |
 
 ### Additional Argument
 
 | Variable Name     | Type  | Description                                              |
 | ----------------- | ----- | -------------------------------------------------------- |
 | `_default_status` | `str` | The default status used when no status code is supplied. |
+
+`VersionMixin`
+
+`VersionMixin` defines a double linked list to store the versioning information. 
+
+| Status Name |   Status Code   |                         Description                          |
+| :---------: | :-------------: | :----------------------------------------------------------: |
+|   `back`    | `OTO(<itself>)` | This is used to indicate the previous version. If it's set to `None`, the current version is the oldest version. |
+|   `front`   | `OTO(<itself>)` | This is used to indicate the next version. If it's set to `None`, the current version is the newest version. |
+| `edited_by` |   `FK(Users)`   |                  The person who edited it.                   |
 
 ## `LangMixin`
 
