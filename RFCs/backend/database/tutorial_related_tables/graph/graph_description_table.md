@@ -1,6 +1,6 @@
 # `GraphDescription Table
 
-The `GraphDescriptionBase` table is similar to [`TutorialTranslationBase`](/RFCs/backend/database/tutorial_related_tables/tutorial/tutorial_translation_base_table.md) and contains entries that describe what each graph is about. 
+The `GraphDescriptionBase` table is similar to [`TutorialTranslationBase`](/RFCs/backend/database/tutorial_related_tables/tutorial/tutorial_translation_base_table.md) and contains entries that describe what each graph is about.
 
 ## Mixins
 
@@ -17,4 +17,3 @@ The `GraphDescriptionBase` table is similar to [`TutorialTranslationBase`](/RFCs
 |   `authors`    | [`MTM(User)`](/RFCs/backend/database/user_system/user_table.md) |      The authors of this description.       |
 |    `title`     |                      `models.TextField`                      |        The title of the description.        |
 | `description`  |                      `models.TextField`                      |          The description content.           |
-

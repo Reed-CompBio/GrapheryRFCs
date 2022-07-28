@@ -40,7 +40,7 @@ let default_request_options: request_options = {
 ### Response
 
 where the `record_array_type` is defined in
-the [`result JSON API `](/RFCs/backend/database/tutorial_related_tables/execution_result/result_json_api.md).
+the [`result JSON API`](/RFCs/backend/database/tutorial_related_tables/execution_result/result_json_api.md).
 
 ```typescript
 type err_msg_type = {

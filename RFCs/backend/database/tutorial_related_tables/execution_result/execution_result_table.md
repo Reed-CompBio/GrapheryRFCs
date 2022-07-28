@@ -1,6 +1,6 @@
 # `ExecutionResult` Table
 
-The `ExecutionResult` table contains the execution results. Each of the result is specified by a code snippet and a graph. The execution JSON has to be formatted in a special configuration. 
+The `ExecutionResult` table contains the execution results. Each of the result is specified by a code snippet and a graph. The execution JSON has to be formatted in a special configuration.
 
 ## Mixins
 
@@ -18,8 +18,8 @@ The `ExecutionResult` table contains the execution results. Each of the result i
 
 ## Result JSON API
 
-[See here](./result_json_api.md). 
+[See here](./result_json_api.md).
 
 ## Result JSON Meta API
 
-[See here](./result_json_meta_api.md). 
+[See here](./result_json_meta_api.md).

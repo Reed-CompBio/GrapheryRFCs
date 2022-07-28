@@ -2,7 +2,7 @@
 
 ## Environment Variables
 
-The executor uses a bunch of environment variables to determine the content it serves. Every environment variable is listed below and when used in shell environment, each should be prefixed with  `GE_`  which is short for graphery executor. For example, if the server port is to be set ot `23032`, `export GE_SERVER_PORT=23032` can be used. 
+The executor uses a bunch of environment variables to determine the content it serves. Every environment variable is listed below and when used in shell environment, each should be prefixed with  `GE_`  which is short for graphery executor. For example, if the server port is to be set ot `23032`, `export GE_SERVER_PORT=23032` can be used.
 
 |     Variable     | Default Value |                         Description                          |
 | :--------------: | :------------: | :----------------------------------------------------------: |
@@ -33,11 +33,9 @@ The executor uses a bunch of environment variables to determine the content it s
 |    `GE_DOCKER_MEM_OUT`     |       `32`       | The unit is `M`egibyte. The maximum amount of memory docker image can take. Exceeding the limit will issue system kill. |
 |    `GE_DOCKER_CPU_OUT`     |      `0.10`      | The unit is `%`. The percentage of CPU the container can use. |
 
-
-
 ## Custom Variables
 
-Custom variables are variables referenced within executor and are not intended to be modified. 
+Custom variables are variables referenced within executor and are not intended to be modified.
 
 |         Variable          |        Value        |                         Description                          |
 | :-----------------------: | :-----------------: | :----------------------------------------------------------: |
@@ -49,7 +47,7 @@ Custom variables are variables referenced within executor and are not intended t
 
 ## Error Code
 
-The exit code return by executor when running locally. 
+The exit code return by executor when running locally.
 
 |      Variable       | Value |                         Description                          |
 | :-----------------: | :---: | :----------------------------------------------------------: |
@@ -68,4 +66,3 @@ The exit code return by executor when running locally.
 | `SHELL_PARSER_GROUP_NAME`  | `WHERE`  | The `Namespace` attribute name of the executor mode, the value should be either value below. |
 | `SHELL_SERVER_PARSER_NAME` | `server` | A possible value of `WHERE`, indicating the running mode is server mode. |
 | `SHELL_LOCAL_PARSER_NAME`  | `local`  | A possible value of  `WHERE`, indicating the running mode is local mode. |
-

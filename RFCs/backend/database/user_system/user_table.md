@@ -1,6 +1,6 @@
-# `User` Table 
+# `User` Table
 
-The user table inherits [`UUIDMixin`](../mixins.md#UUIDMixin) and [`User`](https://docs.djangoproject.com/en/3.2/ref/contrib/auth/) model. View the link to see more properties of the `User` model. The inherited model extends `User` with new properties `role` and `is_verified`. 
+The user table inherits [`UUIDMixin`](../mixins.md#UUIDMixin) and [`User`](https://docs.djangoproject.com/en/3.2/ref/contrib/auth/) model. View the link to see more properties of the `User` model. The inherited model extends `User` with new properties `role` and `is_verified`.
 
 |       Field        |                             Type                             |                         Description                          |
 | :----------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
@@ -17,4 +17,4 @@ The user table inherits [`UUIDMixin`](../mixins.md#UUIDMixin) and [`User`](https
 |    `Visitor`    | `Visitors` can only `view` the tutorials and other content in the control panel. |                           |
 |    `Reader`     |                    No special privileges.                    |                           |
 
-The overwritten `User` model requires a matching [`UserManager`](https://github.com/django/django/blob/main/django/contrib/auth/models.py#L129). It should overwrite [`create_user`](https://github.com/django/django/blob/854e9b066850b9b4eb1171966e996322b2c16d27/django/contrib/auth/models.py#L149) and [`create_superuser`](https://github.com/django/django/blob/main/django/contrib/auth/models.py#L154) functions. Developers should create `User` object only through the helper functions. 
+The overwritten `User` model requires a matching [`UserManager`](https://github.com/django/django/blob/main/django/contrib/auth/models.py#L129). It should overwrite [`create_user`](https://github.com/django/django/blob/854e9b066850b9b4eb1171966e996322b2c16d27/django/contrib/auth/models.py#L149) and [`create_superuser`](https://github.com/django/django/blob/main/django/contrib/auth/models.py#L154) functions. Developers should create `User` object only through the helper functions.

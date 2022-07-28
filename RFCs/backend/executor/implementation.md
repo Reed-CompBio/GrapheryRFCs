@@ -2,11 +2,11 @@
 
 ## `executor`
 
-`executor` is the name of the module executing user-provided scripts on a particular networkx graph. It has two modes: `local` and `server`. To use the executor, the module should be installed by pip and `graphery_executor` executable will be available for execution. `graphery_executor -h` can be used to check the supported options and `graphery_executor -V` can be used to check the installed version. 
+`executor` is the name of the module executing user-provided scripts on a particular networkx graph. It has two modes: `local` and `server`. To use the executor, the module should be installed by pip and `graphery_executor` executable will be available for execution. `graphery_executor -h` can be used to check the supported options and `graphery_executor -V` can be used to check the installed version.
 
-The `local` mode uses `stdin` as the input source. The supported API is listed in [`./local/API.md`](./local/API.md). When executed successfully, a formatted json will be printed to `stdout`, and error messages and stacktrace if otherwise. 
+The `local` mode uses `stdin` as the input source. The supported API is listed in [`./local/API.md`](./local/API.md). When executed successfully, a formatted json will be printed to `stdout`, and error messages and stacktrace if otherwise.
 
-The `server` opens up a WSGI server on specified `host` and `port`, which are defaulted to `127.0.0.1` and `7590` respectively. The server accepts `POST` method when queries are posted to `/run` slug and `GET` method when `/env` is the target. When posting to `/run`, it should follow the local API, i.e. [`./local/API.md`](./local/API.md). When a message is received, the server creates a subprocess, hands the message to a `local` `executor`, wraps the `stdout` from `local` `executor`, and send back a response. The response is always `200 OK` except when the server goes wrong and `500 Internal Server Error` will be returned. 
+The `server` opens up a WSGI server on specified `host` and `port`, which are defaulted to `127.0.0.1` and `7590` respectively. The server accepts `POST` method when queries are posted to `/run` slug and `GET` method when `/env` is the target. When posting to `/run`, it should follow the local API, i.e. [`./local/API.md`](./local/API.md). When a message is received, the server creates a subprocess, hands the message to a `local` `executor`, wraps the `stdout` from `local` `executor`, and send back a response. The response is always `200 OK` except when the server goes wrong and `500 Internal Server Error` will be returned.
 
 ## `Controller`
 
@@ -70,4 +70,4 @@ any. All variables are listed in the first second of [`variables.md`](./variable
 instance support `__getitem__` procedure. When a setting name is provided, the corresponding value will be returned
 by `[]` operation. It's cumbersome to write `setting[setting.IS_LOCAL]` so a getter is added, and it's possible to
 achieve the same thing by using `setting.v.IS_LOCAL`. In `DefaultVars`, `read_from_env` is provided to read value from
-shell environment variables. 
+shell environment variables.

@@ -1,6 +1,6 @@
 # Introduction
 
-This document explains the terms used in the database classes. 
+This document explains the terms used in the database classes.
 
 ## Tag
 
@@ -68,4 +68,3 @@ This document explains the terms used in the database classes.
 |    upload URL    |      The unique URL pointing to the uploaded resource.      |
 |    upload ID     |          The unique UUID of the uploaded resource.          |
 | uploaded content | The content that's uploaded as an attachment to the server. |
-

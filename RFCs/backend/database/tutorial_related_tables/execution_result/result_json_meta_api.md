@@ -18,4 +18,3 @@ interface result_json_meta_type {
     breakpoints: breakpoints_type;
 }
 ```
-

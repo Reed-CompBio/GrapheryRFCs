@@ -1,6 +1,6 @@
 # `Code` Table
 
-The `Code` table describes runnable code snippets. 
+The `Code` table describes runnable code snippets.
 
 ## Mixins
 
@@ -17,9 +17,9 @@ The `Code` table describes runnable code snippets.
 
 ## Code Snippet Guidelines
 
-This describes behaviors of code acceptable by 3.0 API. For 2.0 API, please consult the older document. 
+This describes behaviors of code acceptable by 3.0 API. For 2.0 API, please consult the older document.
 
-After the 3.0 API, the graph and network library `networkx` are injected automatically as `nx` and `networkx`, and users can use it directly, so there is no need to import additional graph or library. With that said, following header should be appended to every code, in which `graph` variable is created in the environment, and the upcoming code should only use `graph`. This is because users can apply the tutorial algorithms by coping the whole tutorial code and replacing `graph` with any other `networkx` graph, without changing anything else. 
+After the 3.0 API, the graph and network library `networkx` are injected automatically as `nx` and `networkx`, and users can use it directly, so there is no need to import additional graph or library. With that said, following header should be appended to every code, in which `graph` variable is created in the environment, and the upcoming code should only use `graph`. This is because users can apply the tutorial algorithms by coping the whole tutorial code and replacing `graph` with any other `networkx` graph, without changing anything else.
 
 ```python
 # Python Version: <the python version of the executor>
@@ -38,7 +38,7 @@ for node in graph.nodes:
     print(node)
 ```
 
-The requested code should be 
+The requested code should be
 
 ```python
 # Python Version: <the python version of the executor>
@@ -50,4 +50,4 @@ for node in graph.nodes:
     print(node)
 ```
 
-All the code will be blacked in the backend before being stored into the database. 
+All the code will be blacked in the backend before being stored into the database.

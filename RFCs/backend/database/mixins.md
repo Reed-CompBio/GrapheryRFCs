@@ -1,6 +1,6 @@
-# Mixins 
+# Mixins
 
-This document introduces some of the mixins used by the models in Graphery. All mixins are subclasses of [`models.Model`](https://docs.djangoproject.com/en/3.2/ref/models/instances/#django.db.models.Model) with the [`abstract` property](https://docs.djangoproject.com/en/3.2/topics/db/models/#abstract-base-classes) in its [`Meta` class](https://docs.djangoproject.com/en/3.2/ref/models/options/) set to `True`. For example, 
+This document introduces some of the mixins used by the models in Graphery. All mixins are subclasses of [`models.Model`](https://docs.djangoproject.com/en/3.2/ref/models/instances/#django.db.models.Model) with the [`abstract` property](https://docs.djangoproject.com/en/3.2/topics/db/models/#abstract-base-classes) in its [`Meta` class](https://docs.djangoproject.com/en/3.2/ref/models/options/) set to `True`. For example,
 
 ```python
 from django.db import models
@@ -14,13 +14,13 @@ class PersonMixin(models.Model):
 
 ## `UUIDMixin`
 
-The `UUIDMixin` overrides the original primary key `id` so that it's a [`models.UUIDField`](https://docs.djangoproject.com/en/3.2/ref/models/fields/#uuidfield). 
+The `UUIDMixin` overrides the original primary key `id` so that it's a [`models.UUIDField`](https://docs.djangoproject.com/en/3.2/ref/models/fields/#uuidfield).
 
 | Field |                             Type                             |              Description               |
 | :---: | :----------------------------------------------------------: | :------------------------------------: |
 | `id`  | [`models.UUIDField`](https://docs.djangoproject.com/en/3.2/ref/models/fields/#uuidfield) | Overrides the type of the primary key |
 
-**Every** model in Graphery must inherit this mixin. That is, every model in Graphery must use UUID as it's primary key. 
+**Every** model in Graphery must inherit this mixin. That is, every model in Graphery must use UUID as it's primary key.
 
 ```python
 from uuid import uuid4
@@ -33,11 +33,9 @@ class UUIDMixin(models.Model):
         abstract = True
 ```
 
-
-
 ## `TimeDateMixin`
 
-The `TimeDateMixin` is used to record the created time and modified time of entries in models inheriting this mixin. It has two fields: 
+The `TimeDateMixin` is used to record the created time and modified time of entries in models inheriting this mixin. It has two fields:
 
 |      Field      |                             Type                             |                         Description                          |
 | :-------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
@@ -55,7 +53,7 @@ class TimeDateMixin(models.Model):
 
 ## `PublicManager`
 
-Additionally, this mixin has it's `objects` [manager](https://docs.djangoproject.com/en/3.2/topics/db/managers/#managers) overridden. Details will be posted later. Here are some tools developers might need to create a manager: 
+Additionally, this mixin has it's `objects` [manager](https://docs.djangoproject.com/en/3.2/topics/db/managers/#managers) overridden. Details will be posted later. Here are some tools developers might need to create a manager:
 
 * [`F()` expression](https://docs.djangoproject.com/en/3.2/ref/models/expressions/#f-expressions)
 * [`annotate(args*, **kwargs)`](https://docs.djangoproject.com/en/3.2/ref/models/querysets/#annotate)
@@ -68,13 +66,13 @@ class PublicManager(models.Manager):
       
     
     def get_public_objects(self) -> QuerySet:
-			"""details coming later"""
+   """details coming later"""
       pass
 ```
 
 ## `PublishedMixin` (Deprecated)
 
-`PublishedMixin` is used to indicate whether an entry is publicly viewable without privileges. It has a `is_published` boolean field as the indicator. Additionally, a computed property `is_public` is provided to developers so that they use other conditions to determine whether an entry can be seen without privileges. `is_public should be used, instead of `is_published`. 
+`PublishedMixin` is used to indicate whether an entry is publicly viewable without privileges. It has a `is_published` boolean field as the indicator. Additionally, a computed property `is_public` is provided to developers so that they use other conditions to determine whether an entry can be seen without privileges. `is_public should be used, instead of`is_published`.
 
 |     Field      |                             Type                             |                     Description                     |
 | :------------: | :----------------------------------------------------------: | :-------------------------------------------------: |
@@ -100,7 +98,7 @@ class PublishedMixin(models.Model):
 
 ## `StatusMixin`
 
-`StatusMixin` is intended to be a replacement for `PublishedMixin`. In the status mixin, developers can assign statuses other than `published` and `not published`, enabling for more flexible access control. 
+`StatusMixin` is intended to be a replacement for `PublishedMixin`. In the status mixin, developers can assign statuses other than `published` and `not published`, enabling for more flexible access control.
 
 |     Field     |        Type        |                         Description                          |
 | :-----------: | :----------------: | :----------------------------------------------------------: |
@@ -108,7 +106,7 @@ class PublishedMixin(models.Model):
 
 ### Status List
 
-The status list shows all the possible status code `item_status` can have. All the codes are all caps. 
+The status list shows all the possible status code `item_status` can have. All the codes are all caps.
 
 | Status Name | Status Code | Description                                                  |
 | :---------: | :---------: | ------------------------------------------------------------ |
@@ -128,7 +126,7 @@ The status list shows all the possible status code `item_status` can have. All t
 
 ## `LangMixin`
 
-The `LangMixin` is intended to indicate what language a database record is written in. 
+The `LangMixin` is intended to indicate what language a database record is written in.
 
 |    Field    |        Type        |    Description    |
 | :---------: | :----------------: | :---------------: |

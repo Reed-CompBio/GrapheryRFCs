@@ -1,6 +1,6 @@
 # `Uploads` Table
 
-The `Uploads` table contains all the upload file used in the textual tutorial content. 
+The `Uploads` table contains all the upload file used in the textual tutorial content.
 
 ## Mixins
 
@@ -15,4 +15,3 @@ The `Uploads` table contains all the upload file used in the textual tutorial co
 |       `name`       |  `models.CharField`   |  The descriptive name of the file.  |
 | `tutorial_anchors` | `MTM(TutorialAnchor)` |                                     |
 |  `graph_anchors`   |  `MTM(GraphAnchor)`   |                                     |
-
