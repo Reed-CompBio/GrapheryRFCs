@@ -3,7 +3,7 @@
 ## Introduction
 
 There are two sets of API, one for server mode and one for local mode. This API is for server mode. For local mode,
-please check out [here](./local/API.md).
+please check out [here](../local/API.md).
 
 ## 3.0 API
 

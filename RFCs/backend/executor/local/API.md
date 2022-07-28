@@ -30,4 +30,4 @@ options:
 
 ```
 
-The minimal command is `graphery_executor local`, and a piece of request data must be fed through stdin as input. For the format of request data, please check out [server API](./server/API.md), and the response is formatted as `record_array_type` which is detailed [here](/RFCs/backend/database/tutorial_related_tables/execution_result/result_json_api.md).
+The minimal command is `graphery_executor local`, and a piece of request data must be fed through stdin as input. For the format of request data, please check out [server API](../server/API.md), and the response is formatted as `record_array_type` which is detailed [here](/RFCs/backend/database/tutorial_related_tables/execution_result/result_json_api.md).
