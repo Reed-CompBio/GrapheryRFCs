@@ -13,7 +13,7 @@ The `Code` table describes runnable code snippets.
 | :---------------: | :----------------------------------------------------------: | :--------------------------------------------: |
 |      `name`       |                      `models.TextField`                      | The human readable name for this code snippet  |
 |      `code`       |                      `models.TextField`                      |                The code snippet                |
-| `tutorial_anchor` | [`FK(TutorialAnchor)`](/RFCs/backend/database/tutorial_related_tables/tutorial/tutorial_anchor_table.md) | The tutorial associated with this code snippet |
+| `tutorial_anchor` | [`OTO(TutorialAnchor)`](/RFCs/backend/database/tutorial_related_tables/tutorial/tutorial_anchor_table.md) | The tutorial associated with this code snippet |
 
 ## Code Snippet Guidelines
 
@@ -23,16 +23,19 @@ After the 3.0 API, the graph and network library `networkx` are injected automat
 
 ```python
 # Python Version: <the python version of the executor>
+from __future__ import annotations 
+
 import networkx as nx 
-graph = nx.g_graph  # type: 
+graph: nx.Graph
 # the graphery graph is injected into the networkx module as `g_graph`
+# so you can also say something like `graph: nx.Graph = nx.g_graph`
 ```
 
 The header should not appear in the database, but rather added during the runtime request. That is, suppose the algorithm looks like the following
 
 ```python
 for node in graph.nodes:
-  print(node)
+    print(node)
 ```
 
 The requested code should be 
@@ -44,6 +47,7 @@ graph: nx.Graph = nx.g_graph
 # the graphery graph is injected into the networkx module as `g_graph`
 
 for node in graph.nodes:
-  print(node)
+    print(node)
 ```
 
+All the code will be blacked in the backend before being stored into the database. 
