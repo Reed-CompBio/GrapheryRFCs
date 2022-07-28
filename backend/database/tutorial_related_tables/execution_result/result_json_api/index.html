@@ -1,0 +1,2089 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Result JSON API - Graphery RFCs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#result-json-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Graphery RFCs" class="md-header__button md-logo" aria-label="Graphery RFCs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Graphery RFCs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Result JSON API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Reed-CompBio/GrapheryRFCs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Graphery RFCs" class="md-nav__button md-logo" aria-label="Graphery RFCs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Graphery RFCs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Reed-CompBio/GrapheryRFCs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        Get Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../guidelines/" class="md-nav__link">
+        Guidelines
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Backend
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Backend" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Backend
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../env_list/" class="md-nav__link">
+        Env list
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          Api
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Api" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Api
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../api/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_2" type="checkbox" id="__nav_4_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3_2">
+          Graphql
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Graphql" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Graphql
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../api/graphql/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../api/graphql/mutations/" class="md-nav__link">
+        Mutations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../api/graphql/queries/" class="md-nav__link">
+        Queries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../api/graphql/types/" class="md-nav__link">
+        Types
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_3" type="checkbox" id="__nav_4_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3_3">
+          Ws
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ws" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Ws
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../api/ws/api/" class="md-nav__link">
+        Api
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          Data bridge
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Data bridge" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Data bridge
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../data_bridge/base/" class="md-nav__link">
+        Bridge Base
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../data_bridge/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          Database
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Database" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Database
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mixins/" class="md-nav__link">
+        Mixins
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_3" type="checkbox" id="__nav_4_5_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_3">
+          Tutorial related tables
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorial related tables" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorial related tables
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_3_2" type="checkbox" id="__nav_4_5_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_3_2">
+          Code
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Code" data-md-level="4">
+        <label class="md-nav__title" for="__nav_4_5_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Code
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code/code_table/" class="md-nav__link">
+        `Code` Table
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_3_3" type="checkbox" id="__nav_4_5_3_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_3_3">
+          Execution result
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Execution result" data-md-level="4">
+        <label class="md-nav__title" for="__nav_4_5_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Execution result
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../execution_result_table/" class="md-nav__link">
+        `ExecutionResult` Table
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Result JSON API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Result JSON API
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-versions" class="md-nav__link">
+    API versions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-0" class="md-nav__link">
+    3.0 API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-0" class="md-nav__link">
+    2.0 API
+  </a>
+  
+    <nav class="md-nav" aria-label="2.0 API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#line" class="md-nav__link">
+    line
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    variables
+  </a>
+  
+    <nav class="md-nav" aria-label="variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identity" class="md-nav__link">
+    &lt;identity&gt;
+  </a>
+  
+    <nav class="md-nav" aria-label="&lt;identity&gt;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type" class="md-nav__link">
+    type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repr" class="md-nav__link">
+    repr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color" class="md-nav__link">
+    color
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property-only-bounded-to-graph-objects-like-nodes-and-edges" class="md-nav__link">
+    property (only bounded to graph objects like nodes and edges)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_id" class="md-nav__link">
+    python_id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accesses" class="md-nav__link">
+    accesses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-0" class="md-nav__link">
+    1.0 API (Depricated)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../result_json_meta_api/" class="md-nav__link">
+        Result JSON Meta API
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_3_4" type="checkbox" id="__nav_4_5_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_3_4">
+          Graph
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Graph" data-md-level="4">
+        <label class="md-nav__title" for="__nav_4_5_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Graph
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph/graph_anchor_table/" class="md-nav__link">
+        `GraphAnchor` Table
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph/graph_content_table/" class="md-nav__link">
+        `GraphContent` Table
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph/graph_description_table/" class="md-nav__link">
+        `GraphDescription Table
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_3_5" type="checkbox" id="__nav_4_5_3_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_3_5">
+          Tag
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tag" data-md-level="4">
+        <label class="md-nav__title" for="__nav_4_5_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Tag
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tag/tag_anchor_table/" class="md-nav__link">
+        `TagAnchor` Table
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tag/tag_table/" class="md-nav__link">
+        `Tag` Table
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_3_6" type="checkbox" id="__nav_4_5_3_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_3_6">
+          Tutorial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorial" data-md-level="4">
+        <label class="md-nav__title" for="__nav_4_5_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorial
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/tutorial_anchor_table/" class="md-nav__link">
+        `TutorialAnchor` Table
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/tutorial_table/" class="md-nav__link">
+        `` Table
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_3_7" type="checkbox" id="__nav_4_5_3_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_3_7">
+          Uploads
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Uploads" data-md-level="4">
+        <label class="md-nav__title" for="__nav_4_5_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Uploads
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uploads/uploads_table/" class="md-nav__link">
+        `Uploads` Table
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_4" type="checkbox" id="__nav_4_5_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_4">
+          User system
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="User system" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          User system
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user_system/user_table/" class="md-nav__link">
+        `User` Table
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6">
+          Executor
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Executor" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Executor
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../executor/implementation/" class="md-nav__link">
+        Implementation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../executor/introduction/" class="md-nav__link">
+        Execution Server `Executor`
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../executor/variables/" class="md-nav__link">
+        Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6_4" type="checkbox" id="__nav_4_6_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6_4">
+          Local
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Local" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          Local
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../executor/local/API/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6_5" type="checkbox" id="__nav_4_6_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6_5">
+          Server
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Server" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_6_5">
+          <span class="md-nav__icon md-icon"></span>
+          Server
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../executor/server/API/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Frontend
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Frontend" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Frontend
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../frontend/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2">
+          Event bus
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Event bus" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Event bus
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../frontend/event-bus/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../frontend/event-bus/workflows/" class="md-nav__link">
+        Workflows
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tutorials/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-versions" class="md-nav__link">
+    API versions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-0" class="md-nav__link">
+    3.0 API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-0" class="md-nav__link">
+    2.0 API
+  </a>
+  
+    <nav class="md-nav" aria-label="2.0 API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#line" class="md-nav__link">
+    line
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    variables
+  </a>
+  
+    <nav class="md-nav" aria-label="variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identity" class="md-nav__link">
+    &lt;identity&gt;
+  </a>
+  
+    <nav class="md-nav" aria-label="&lt;identity&gt;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type" class="md-nav__link">
+    type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repr" class="md-nav__link">
+    repr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color" class="md-nav__link">
+    color
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property-only-bounded-to-graph-objects-like-nodes-and-edges" class="md-nav__link">
+    property (only bounded to graph objects like nodes and edges)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_id" class="md-nav__link">
+    python_id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accesses" class="md-nav__link">
+    accesses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-0" class="md-nav__link">
+    1.0 API (Depricated)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/Reed-CompBio/GrapheryRFCs/RFCs/backend/database/tutorial_related_tables/execution_result/result_json_api.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="result-json-api">Result JSON API</h1>
+<h2 id="api-versions">API versions</h2>
+<ul>
+<li><a href="#3-0">3.0</a></li>
+<li><a href="#2.0">2.0</a></li>
+<li><a href="#1-0">1.0(Depricated)</a></li>
+</ul>
+<h2 id="3-0">3.0 API</h2>
+<p>Credit: a lot of internal changes were inspired by <a href="https://github.com/okpy/pytutor/">PyTutor</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="kr">type</span><span class="w"> </span><span class="nx">graph_object_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Node&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;Edge&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;DataEdge&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;MultiEdge&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;MultiDataEdge&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="kr">type</span><span class="w"> </span><span class="nx">python_object_type</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;Number&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;List&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;Tuple&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;Deque&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;None&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;Set&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;Mapping&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;Sequence&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;Object&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="kr">type</span><span class="w"> </span><span class="nx">special_object_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Init&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;Ref&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="kr">type</span><span class="w"> </span><span class="nx">object_type</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">graph_object_type</span><span class="w"></span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">python_object_type</span><span class="w"></span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">special_object_type</span><span class="p">;</span><span class="w"></span>
+
+<span class="kr">type</span><span class="w"> </span><span class="nx">object_identity_seperator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;\u200b@&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="kr">type</span><span class="w"> </span><span class="nx">object_identity_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="kt">string</span><span class="si">}${</span><span class="nx">object_identity_seperator</span><span class="si">}${</span><span class="kt">string</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">compositional_object_identity_type</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="nx">object_type</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">repr</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">properties</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">graph_id</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">[</span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">};</span><span class="w"></span>
+<span class="w">  </span><span class="nx">python_id</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">record_type</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">line</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">variables</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="nx">object_identity_type</span><span class="p">,</span><span class="w"> </span><span class="nx">compositional_object_identity_type</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">accesses?</span><span class="o">:</span><span class="w"> </span><span class="kt">compositional_object_identity_type</span><span class="p">[];</span><span class="w"></span>
+<span class="w">  </span><span class="nx">variable_orders?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span><span class="w"></span>
+<span class="w">  </span><span class="nx">stdout?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kr">type</span><span class="w"> </span><span class="nx">record_array_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">record_type</span><span class="p">[];</span><span class="w"></span>
+</code></pre></div>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">an_example</span><span class="o">:</span><span class="w"> </span><span class="kt">compositional_object_identity_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Node&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#3A5F99&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">repr</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;animal node&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">properties</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">graph_id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#19&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">degree</span><span class="o">:</span><span class="w"> </span><span class="kt">19</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">python_id</span><span class="o">:</span><span class="w"> </span><span class="kt">4411533616</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">snd_example</span><span class="o">:</span><span class="w"> </span><span class="kt">compositional_object_identity_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Number&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#334766&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">repr</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;20&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">python_id</span><span class="o">:</span><span class="w"> </span><span class="kt">4411533616</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">one_more_example</span><span class="o">:</span><span class="w"> </span><span class="kt">record_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">line</span><span class="o">:</span><span class="w"> </span><span class="kt">18</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">variables</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;main\u200b@test_var&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">an_example</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">accesses</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">snd_example</span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nx">stdout</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hello world!&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<h2 id="2-0">2.0 API</h2>
+<p>A <em>record array</em> looks like this. Each element in the record array is called <em>record object</em> or simply <em>record</em>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">record_array</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s1">&#39;line&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> 
+        <span class="s1">&#39;variables&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;&lt;identity&gt;&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;some_type&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;some_color_hex&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;repr&#39;</span><span class="p">:</span> <span class="s1">&#39;some_repr&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;graph_element_id&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">&#39;property_1&#39;</span><span class="p">:</span> <span class="nb">str</span> <span class="ow">or</span> <span class="n">number</span><span class="p">,</span>
+                    <span class="o">...</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;python_id&quot;</span><span class="p">:</span> <span class="mi">123456789</span>
+            <span class="p">}</span>
+        <span class="p">},</span> 
+        <span class="s1">&#39;accesses&#39;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;some_type&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;some_color_hex&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;repr&#39;</span><span class="p">:</span> <span class="s1">&#39;some_repr&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">&#39;property_1&#39;</span><span class="p">:</span> <span class="nb">str</span> <span class="ow">or</span> <span class="n">number</span><span class="p">,</span>
+                    <span class="o">...</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;python_id&quot;</span><span class="p">:</span> <span class="mi">123456789</span>
+            <span class="p">},</span>
+        <span class="p">],</span>
+        <span class="s1">&#39;order&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;identity1&#39;</span><span class="p">,</span> <span class="s1">&#39;identity2&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="o">...</span>
+<span class="p">]</span>
+</code></pre></div>
+<h3 id="line"><code>line</code></h3>
+<p>The <code>line</code> field indicates which line this object is referencing. The type is <code>int</code>.</p>
+<h3 id="variables"><code>variables</code></h3>
+<p>The <code>variables</code> field indicates which variables are accessed in this line. It's a <code>dict</code> type, or <code>object</code> in JS. The members are detailed below.</p>
+<h4 id="identity"><code>&lt;identity&gt;</code></h4>
+<p>The <code>&lt;identity&gt;</code> is going to be replaced by a string built from an <code>Sequence</code> of strings by the following rules.</p>
+<p>First, we need a  <code>ideantity</code> <code>Sequence</code>, which has a length greater than <code>2</code> to avoid namespace collision. For example, a tuple <code>('test_function', 'test_var')</code>. One with length greater than <code>2</code> is also acceptable, as long as the frontend and the backend agree. The length is probably going to get longer to cope with potential name duplication, since by adding more string we are creating new namespaces. The last item of the <code>Sequence</code> must be the name of the variable, which is to be displayed on the screen. This must be reinforced by both the frontend and the backend.</p>
+<p>When the elements in the <code>Sequence</code> are connected by a separator, they become a <em>textual variable identity</em>, which is going to replace the <code>&lt;identity&gt;</code>'s place. The separator is now proposed to be <code>u'\u200b@'</code>, where <code>u'\u200b'</code> is an <a href="https://unicode-table.com/en/200B/">empty char</a> that's almost impossible to appear in the domain of possible components and <code>u'@'</code> is to make sure it's human readable during debugging.</p>
+<p>The <code>&lt;identity&gt;</code> should be decoded in the following way by removing the separator in a textual variable identity. Two <code>&lt;identity&gt;</code>s are considered as the same when they have the same namespaces <strong>and</strong> the same name For future discussions, the content in a <code>&lt;identity&gt;</code> field, ie. the object of <code>&lt;identity&gt;</code>, is called <em>compositional variable identity</em>.</p>
+<h5 id="type"><code>type</code></h5>
+<p>The <code>type</code> should be a enum(mapping) that has the following values.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="n">Node</span><span class="p">:</span> <span class="s1">&#39;Node&#39;</span><span class="p">,</span>
+    <span class="n">Edge</span><span class="p">:</span> <span class="s1">&#39;Edge&#39;</span><span class="p">,</span>
+    <span class="nb">str</span><span class="p">:</span> <span class="s1">&#39;String&#39;</span><span class="p">,</span>
+    <span class="n">List</span><span class="p">:</span> <span class="s1">&#39;List&#39;</span><span class="p">,</span>
+    <span class="n">Tuple</span><span class="p">:</span> <span class="s1">&#39;Tuple&#39;</span><span class="p">,</span>
+    <span class="n">Deque</span><span class="p">:</span> <span class="s1">&#39;Deque&#39;</span><span class="p">,</span>
+    <span class="c1">#  Counter: &#39;Counter&#39;,</span>
+    <span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">):</span> <span class="s1">&#39;None&#39;</span><span class="p">,</span>
+    <span class="n">Set</span><span class="p">:</span> <span class="s1">&#39;Set&#39;</span><span class="p">,</span>  <span class="c1"># which includes Set, set, KeyView(dict_keys), ItemView(dict_items), frozenset, MutableSet</span>
+    <span class="n">Mapping</span><span class="p">:</span> <span class="s1">&#39;Mapping&#39;</span><span class="p">,</span>  <span class="c1"># which includes mappingproxy (not sure what that is), MutableMapping, dict </span>
+    <span class="n">Sequence</span><span class="p">:</span> <span class="s1">&#39;Sequence&#39;</span><span class="p">,</span>  <span class="c1"># which includes tuple, str, range, memoryview, MutableSequence, list, bytearray</span>
+    <span class="c1">#  ByteString: &#39;ByteString&#39;,  # which is optional in this version </span>
+    <span class="nb">object</span><span class="p">:</span> <span class="s1">&#39;Object&#39;</span>  <span class="c1"># the wildcard that matches everything else </span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Some additional types are added to provide more information:</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+    <span class="s1">&#39;init&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;reference&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</code></pre></div>
+<p><code>init</code> type indicates the element has not been initialized yet, which should only be used on the variables in the first record.</p>
+<p><code>reference</code> type indicates the current object is a reference, and guarantees that the object appears in the previous stack trace. To obtain the detail of the object, the program should look backward.  (we will talk about this later)</p>
+<p>The <code>type</code> string should follow the naming convention of a Python class.</p>
+<p>The order in this dictionary matters. Since if a string (<code>str</code> type) is matched as a sequence (<code>Sequence</code> type), the frontend is probably going to unfold the elements (in this case the chars, so a literal <code>hello</code> will be displayed as <code>[H, E, L, L, O]</code>).</p>
+<p>The types can be further divided into subcategories:</p>
+<div class="highlight"><pre><span></span><code><span class="n">_SINGULAR_MAPPING</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">Number</span><span class="p">:</span> <span class="s1">&#39;Number&#39;</span><span class="p">,</span>
+    <span class="nb">str</span><span class="p">:</span> <span class="s1">&#39;String&#39;</span><span class="p">,</span>
+    <span class="n">Node</span><span class="p">:</span> <span class="s1">&#39;Node&#39;</span><span class="p">,</span>
+    <span class="n">Edge</span><span class="p">:</span> <span class="s1">&#39;Edge&#39;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">):</span> <span class="s1">&#39;None&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="c1"># and </span>
+<span class="n">_LINEAR_CONTAINER_MAPPING</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">List</span><span class="p">:</span> <span class="s1">&#39;List&#39;</span><span class="p">,</span>
+    <span class="n">Tuple</span><span class="p">:</span> <span class="s1">&#39;Tuple&#39;</span><span class="p">,</span>
+    <span class="n">Deque</span><span class="p">:</span> <span class="s1">&#39;Deque&#39;</span><span class="p">,</span>
+    <span class="n">Set</span><span class="p">:</span> <span class="s1">&#39;Set&#39;</span><span class="p">,</span>  <span class="c1"># which includes Set, set, KeyView(dict_keys), ValueView(dict_values), ItemView(dict_items),</span>
+    <span class="c1"># frozenset, MutableSet</span>
+    <span class="n">Sequence</span><span class="p">:</span> <span class="s1">&#39;Sequence&#39;</span><span class="p">,</span>  <span class="c1"># which includes tuple, str, range, memoryview, MutableSequence, list, bytearray</span>
+<span class="p">}</span>
+<span class="c1"># and </span>
+<span class="n">_PAIR_CONTAINER_MAPPING</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">Counter</span><span class="p">:</span> <span class="s1">&#39;Counter&#39;</span><span class="p">,</span>
+    <span class="n">Mapping</span><span class="p">:</span> <span class="s1">&#39;Mapping&#39;</span><span class="p">,</span>  <span class="c1"># which includes mappingproxy (not sure what that is), MutableMapping, dict</span>
+<span class="p">}</span>
+<span class="c1"># and </span>
+<span class="n">_WILDCARD_MAPPING</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nb">object</span><span class="p">:</span> <span class="s1">&#39;Object&#39;</span>
+<span class="p">}</span>
+<span class="c1"># so </span>
+<span class="n">_TYPE_MAPPING</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="c1"># simple individuals</span>
+        <span class="o">**</span><span class="n">_SINGULAR_MAPPING</span><span class="p">,</span>
+        <span class="c1"># simple linear containers</span>
+        <span class="o">**</span><span class="n">_LINEAR_CONTAINER_MAPPING</span><span class="p">,</span>
+        <span class="c1"># simple pair containers</span>
+        <span class="o">**</span><span class="n">_PAIR_CONTAINER_MAPPING</span><span class="p">,</span>
+        <span class="c1"># wildcard</span>
+        <span class="o">**</span> <span class="n">_WILDCARD_MAPPING</span>
+    <span class="p">}</span>
+</code></pre></div>
+<h5 id="repr"><code>repr</code></h5>
+<p>Types in the singular mapping should be checked first. And they will be converted into strings when being as the value of <code>repr</code> field.</p>
+<p>For types in the linear container mapping, we are using recursive resolution method for the elements in the object, meaning the every memeber in a linear container will go through the resolution function again. The <code>repr</code> field of the objects of these types will be a array of compositional variable identities.</p>
+<p>Since JSON doesn't support keys being objects, objects in the pair container cannot be represented in key-value pair as they do in the python. So the elements, contents of both key and value in the key-value pair, in objects of these types will also go through recursive resolution. As a result, we are using an array to represent the key-value pairs in each pair container. The <code>repr</code> field will be a array of objects with object having only two key-value pairs, whose keys are <code>key</code> and <code>value</code> respectively, and values are compositional variable identities.</p>
+<p>Here is an example:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># for linear containers </span>
+<span class="p">[</span>
+   <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;some_type&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;some_color_hex&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;repr&quot;</span><span class="p">:</span> <span class="s2">&quot;some_repr&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;graph_element_id&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;property_1&quot;</span><span class="p">:</span> <span class="s2">&quot;str or number&quot;</span>
+            <span class="o">...</span>
+        <span class="p">},</span>  <span class="c1"># (required only by graph objects like nodes and edges)</span>
+        <span class="s2">&quot;python_id&quot;</span><span class="p">:</span> <span class="mi">123456789</span>
+    <span class="p">},</span> 
+    <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;some_type&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;some_color_hex&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;repr&quot;</span><span class="p">:</span> <span class="s2">&quot;some_repr&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;graph_element_id&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;property_1&quot;</span><span class="p">:</span> <span class="s2">&quot;str or number&quot;</span>
+            <span class="o">...</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;python_id&quot;</span><span class="p">:</span> <span class="mi">123456789</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+
+<span class="c1"># for pair containers </span>
+<span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;some_type&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;some_color_hex&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;repr&quot;</span><span class="p">:</span> <span class="s2">&quot;some_repr&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;graph_element_id&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;property_1&quot;</span><span class="p">:</span> <span class="s2">&quot;str or number&quot;</span>
+                <span class="o">...</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;python_id&quot;</span><span class="p">:</span> <span class="mi">123456789</span>
+        <span class="p">},</span> 
+        <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;some_type&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;some_color_hex&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;repr&quot;</span><span class="p">:</span> <span class="s2">&quot;some_repr&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;graph_element_id&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;property_1&quot;</span><span class="p">:</span> <span class="s2">&quot;str or number&quot;</span>
+                <span class="o">...</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;python_id&quot;</span><span class="p">:</span> <span class="mi">123456789</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="o">...</span>
+<span class="p">]</span>
+</code></pre></div>
+<p>Hence, we can preserve the key-value pairs and use recursion to generate general object representations.</p>
+<p><code>repr</code> should be a string representation of the value. The <code>repr</code> should be formatted according to the <code>type</code> field. Then, if the <code>__repr__</code> or <code>__str__</code> function is overridden in a instance, the program should use those. It should prefer <code>__repr__</code> over <code>__str__</code>. Otherwise, the ugly default representation should be used.</p>
+<h5 id="color"><code>color</code></h5>
+<p>The <code>color</code> is used to in the visualization. The value of <code>color</code> must be a string of hex color. The hex color should be chose in a way that's friendly to color blind people. It's not guaranteed that all colors are friendly. The author should try to expand the palette as much as possible.</p>
+<h5 id="id"><code>id</code></h5>
+<p>The field <code>id</code> is the id of the graph element. The field facilitates the interaction with and is required by the Cytoscape module.</p>
+<h5 id="property-only-bounded-to-graph-objects-like-nodes-and-edges"><code>property</code> (only bounded to graph objects like nodes and edges)</h5>
+<p>The item is <code>property</code> which is a graph-element-specific item. That is, only graph elements have this item. The <code>property</code> contains the properties that's needed to be displayed on the tooltips in the Cytoscape window. Currently, the value of the <code>property</code> mapping should only be a string or a number.</p>
+<h5 id="python_id"><code>python_id</code></h5>
+<p>The <code>python_id</code> field is to collect the result of <code>id()</code> of the object. When there is a recursive structure, the repeated objects can refer to the previous object.</p>
+<h5 id="accesses"><code>accesses</code></h5>
+<p>The <code>accesses</code> contains a list of accessed values from some function calls. If a function is marked with a decorator <code>look_at</code>, the return value of the function will be recorded.</p>
+<p>The new variable list is going to bring up the changed variables. So <code>order</code> is a new field that going to specify the order of the variables on the variable list. Since the dictionary used in the variable list preserves the insertion order, one way to get around <code>order</code> field is by deleting the variable and add it back as if it's a new record.</p>
+<h2 id="1-0">1.0 API (Depricated)</h2>
+<div class="highlight"><pre><span></span><code><span class="n">record_array</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span>
+      <span class="s1">&#39;line&#39;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span> 
+      <span class="s1">&#39;variables&#39;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s1">&#39;identity&#39;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;some_type&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;some_color_hex&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;repr&#39;</span><span class="p">:</span> <span class="s1">&#39;some_repr&#39;</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">},</span> 
+  <span class="o">...</span>
+<span class="p">]</span>
+</code></pre></div>
+<p>The <code>line</code> variable is the line number of current execution. Say the current line is 17, the variables are showing the list of variable in the environment after the line is executed.</p>
+<p><code>identity</code> is built from <code>(prefix, variable_name)</code>. The prefix is the string representation of a class or a function. The variable name is the variable name of the variable. This format is going to create namespace for every variable and avoid errors on frontend parsing. The identity itself is a string. The two components are separated by <code>#</code>.</p>
+<p><code>type</code> is an after-thought added at the end of the first development cycle. This was intended to distinguish graph objects from regular objects.</p>
+<p><code>color</code> is the color hex with which the variable is going to be identified on the frontend.</p>
+<p><code>repr</code> is the string representation of the variable, that is, the value of the variable.</p>
+<h2 id="_1"></h2>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../execution_result_table/" class="md-footer__link md-footer__link--prev" aria-label="Previous: `ExecutionResult` Table" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              `ExecutionResult` Table
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../result_json_meta_api/" class="md-footer__link md-footer__link--next" aria-label="Next: Result JSON Meta API" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Result JSON Meta API
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": [], "search": "../../../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>
